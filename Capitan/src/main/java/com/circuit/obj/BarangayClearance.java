@@ -5,7 +5,11 @@
  */
 package com.circuit.obj;
 
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -17,8 +21,10 @@ public class BarangayClearance {
     String surname;
     String firstName;
     String middleName;
-    boolean gender;
-    Date birthDate;
+    String gender;
+    String birthDate;
+    String control_no;
+    String current_date;
     int age;
     String citizenship;
     String address;
@@ -29,7 +35,10 @@ public class BarangayClearance {
     int amountChange;
     int regCost;
     int regVat;
+    byte[] profileImage;
     
+    
+    private Map<String,Object> data = new HashMap<String,Object>();
     
     public int getId() {
         return id;
@@ -44,6 +53,7 @@ public class BarangayClearance {
     }
 
     public void setSurname(String surname) {
+        this.data.put("SURNAME", surname);
         this.surname = surname;
     }
 
@@ -52,6 +62,7 @@ public class BarangayClearance {
     }
 
     public void setFirstName(String firstName) {
+        this.data.put("FIRSTNAME", firstName);
         this.firstName = firstName;
     }
 
@@ -60,22 +71,27 @@ public class BarangayClearance {
     }
 
     public void setMiddleName(String middleName) {
+        this.data.put("MIDDLENAME", middleName);
         this.middleName = middleName;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
+        this.data.put("GENDER", gender);
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+   
+
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
+        this.data.put("BIRTHDATE", birthDate);
         this.birthDate = birthDate;
     }
 
@@ -84,6 +100,7 @@ public class BarangayClearance {
     }
 
     public void setAge(int age) {
+        this.data.put("AGE", age);
         this.age = age;
     }
 
@@ -92,6 +109,7 @@ public class BarangayClearance {
     }
 
     public void setCitizenship(String citizenship) {
+        this.data.put("CITIZENSHIP", citizenship);
         this.citizenship = citizenship;
     }
 
@@ -100,6 +118,7 @@ public class BarangayClearance {
     }
 
     public void setAddress(String address) {
+        this.data.put("ADDRESS", address);
         this.address = address;
     }
 
@@ -108,6 +127,7 @@ public class BarangayClearance {
     }
 
     public void setBarangay(String barangay) {
+        this.data.put("BARANGAY", barangay);
         this.barangay = barangay;
     }
 
@@ -116,6 +136,7 @@ public class BarangayClearance {
     }
 
     public void setCity(String city) {
+        this.data.put("CITY", city);
         this.city = city;
     }
 
@@ -124,6 +145,7 @@ public class BarangayClearance {
     }
 
     public void setRemarks(String remarks) {
+        this.data.put("REMARKS", remarks);
         this.remarks = remarks;
     }
 
@@ -132,6 +154,7 @@ public class BarangayClearance {
     }
 
     public void setAmountPaid(int amountPaid) {
+        this.data.put("AMOUNT_PAID", amountPaid);
         this.amountPaid = amountPaid;
     }
 
@@ -140,6 +163,7 @@ public class BarangayClearance {
     }
 
     public void setAmountChange(int amountChange) {
+        this.data.put("AMOUNT_CHANGE", amountChange);
         this.amountChange = amountChange;
     }
 
@@ -148,6 +172,7 @@ public class BarangayClearance {
     }
 
     public void setRegCost(int regCost) {
+        this.data.put("REG_COST",   regCost);
         this.regCost = regCost;
     }
 
@@ -156,7 +181,46 @@ public class BarangayClearance {
     }
 
     public void setRegVat(int regVat) {
+        this.data.put("REG_VAT", regVat);
         this.regVat = regVat;
+    }
+
+    public String getControl_no() {
+        return control_no;
+    }
+
+    public void setControl_no(String control_no) {
+          this.data.put("CONTROL_NO", control_no);
+        this.control_no = control_no;
+    }
+
+    public String getCurrent_date() {
+        return current_date;
+    }
+
+    public void setCurrent_date(String current_date) {
+          this.data.put("CURRENT_DATE", current_date);
+        this.current_date = current_date;
+    }
+
+    public byte[] getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(byte[] profileImage) {
+        this.data.put("PROFILE_IMAGE", profileImage);
+        this.profileImage = profileImage;
+    }
+    
+    
+    
+    
+     
+    
+     public Map<String,Object> getData()
+    {
+        
+        return data;
     }
     
     
