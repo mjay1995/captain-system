@@ -8,7 +8,9 @@ package com.circuit.db;
 import com.circuit.exception.ServiceException;
 import com.circuit.obj.BarangayClearance;
 import com.circuit.obj.BarangayReport;
+import java.sql.ResultSet;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -32,5 +34,6 @@ public interface BarangayClearanceDatabase {
     public BarangayReport generateAndSaveBarangayReport(BarangayClearance  barangayClearance) throws ServiceException;
     
      public BarangayReport generateAndSaveBarangayClearanceReportReciept(BarangayClearance barangayClearance) throws ServiceException;
+   
     
 }

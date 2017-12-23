@@ -27,6 +27,8 @@ public class BusinessClearance {
     String recommendations;
     float clearanceFee;
     String inspectorName;
+    
+    
 
     public int getId() {
         return id;

@@ -5,11 +5,12 @@
  */
 package com.circuit.obj;
 
-import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -18,12 +19,13 @@ import java.util.Map;
 public class BarangayClearance {
     
     int id;
+    String fullname;
     String surname;
     String firstName;
     String middleName;
     String gender;
     String birthDate;
-    String control_no;
+    int control_no;
     String current_date;
     int age;
     String citizenship;
@@ -39,6 +41,7 @@ public class BarangayClearance {
     
     
     private Map<String,Object> data = new HashMap<String,Object>();
+
     
     public int getId() {
         return id;
@@ -54,7 +57,7 @@ public class BarangayClearance {
 
     public void setSurname(String surname) {
         this.data.put("SURNAME", surname);
-        this.surname = surname;
+        this.surname = surname ;
     }
 
     public String getFirstName() {
@@ -72,7 +75,7 @@ public class BarangayClearance {
 
     public void setMiddleName(String middleName) {
         this.data.put("MIDDLENAME", middleName);
-        this.middleName = middleName;
+          this.middleName = middleName;
     }
 
     public String getGender() {
@@ -185,13 +188,13 @@ public class BarangayClearance {
         this.regVat = regVat;
     }
 
-    public String getControl_no() {
+    public int getControl_no() {
         return control_no;
     }
 
-    public void setControl_no(String control_no) {
+    public void setControl_no(int control_no) {
           this.data.put("CONTROL_NO", control_no);
-        this.control_no = control_no;
+        this.control_no = control_no++;
     }
 
     public String getCurrent_date() {
@@ -200,7 +203,7 @@ public class BarangayClearance {
 
     public void setCurrent_date(String current_date) {
           this.data.put("CURRENT_DATE", current_date);
-        this.current_date = current_date;
+       this.current_date = current_date;
     }
 
     public byte[] getProfileImage() {
@@ -211,6 +214,16 @@ public class BarangayClearance {
         this.data.put("PROFILE_IMAGE", profileImage);
         this.profileImage = profileImage;
     }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+    
+    
     
     
     

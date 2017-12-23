@@ -67,10 +67,9 @@
                      <children>
                         <TableView fx:id="brgyDataTable" layoutX="12.0" layoutY="77.0" prefHeight="574.0" prefWidth="892.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="ID" />
-                              <TableColumn prefWidth="258.0" text="Full Name" />
-                              <TableColumn prefWidth="192.0" text="Date Registered" />
-                              <TableColumn prefWidth="366.0" text="Expiration" />
+                              <TableColumn id="table-column" fx:id="idCol" editable="false" prefWidth="236.0" resizable="false" text="ID" />
+                              <TableColumn id="table-column" fx:id="fullNameCol" editable="false" prefWidth="273.0" resizable="false" text="Full Name" />
+                              <TableColumn id="table-column" fx:id="dateRegCol" editable="false" prefWidth="382.0" resizable="false" text="Date Registered" />
                            </columns>
                         </TableView>
                         <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="57.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20pz 20px 0px 0px;">

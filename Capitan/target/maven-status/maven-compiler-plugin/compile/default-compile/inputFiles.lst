@@ -4,6 +4,7 @@ C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\uti
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\BarangayRecords.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\main\MainController.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\BarangayReport.java
+C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\service\ClearanceService.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\BuildingType.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\Admin.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\main\Main.java
@@ -16,10 +17,12 @@ C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\exc
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\utils\WebcamCapture.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\db\BarangayClearanceImpl.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\LuponTagapamayapa.java
+C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\Properties\BarangayClearanceProperties.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\BufferdImage.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\db\BarangayClearanceDatabase.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\db\DatabaseSource.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\LuponTanggapan.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\utils\ReportConnection.java
+C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\service\impl\ClearanceServiceImpl.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\obj\Barangay.java
 C:\Users\Marvin\Documents\NetBeansProjects\Capitan\src\main\java\com\circuit\main\OfficialsController.java

@@ -8,17 +8,30 @@ package com.circuit.db;
 import com.circuit.exception.ServiceException;
 import com.circuit.obj.BarangayClearance;
 import com.circuit.obj.BarangayReport;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.jfree.util.Log;
+
 
 /**
  *
  * @author Marvin
  */
 public class BarangayClearanceImpl extends DatabaseSource implements BarangayClearanceDatabase {
+    
+ 
 
     @Override
     public BarangayClearance getBarangayClearance(int id) throws ServiceException {
@@ -38,6 +51,7 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
     @Override
     public BarangayClearance saveClearance(BarangayClearance barangayClearance) throws ServiceException {
         PreparedStatement ps;
+      
         
         try
         {
@@ -49,7 +63,8 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
                         + " ("
                         + "surname, "
                         + "firstname, "
-                        + "middlename, "
+                        + "middlename,"
+                        + "fullname, "
                         + "gender, "
                         + "birthdate, "
                         + "age, "
@@ -67,27 +82,28 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
                         + "profile_pic"
                         + ")"
                         + "VALUES "
-                        + "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                        + "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 
                 ps = this.getConnection().prepareStatement(insertSql);
                 ps.setString(1, barangayClearance.getSurname());
                 ps.setString(2, barangayClearance.getFirstName());
                 ps.setString(3, barangayClearance.getMiddleName());
-                ps.setString(4, barangayClearance.getGender());
-                ps.setString(5, String.valueOf(barangayClearance.getBirthDate()));
-                ps.setString(6, String.valueOf(barangayClearance.getAge()));
-                ps.setString(7, barangayClearance.getCitizenship());
-                ps.setString(8, barangayClearance.getAddress());
-                ps.setString(9, barangayClearance.getBarangay());
-                ps.setString(10, barangayClearance.getCity());
-                ps.setString(11, barangayClearance.getRemarks());
-                ps.setString(12,  String.valueOf(barangayClearance.getAmountPaid()));
-                ps.setString(13,  String.valueOf(barangayClearance.getAmountChange()));
-                ps.setString(14, String.valueOf(barangayClearance.getRegCost()));
-                ps.setString(15,  String.valueOf(barangayClearance.getRegVat())); 
-                ps.setString(16, barangayClearance.getControl_no());
-                ps.setString(17, barangayClearance.getCurrent_date());
-                ps.setBytes(18, barangayClearance.getProfileImage());
+                ps.setString(4, barangayClearance.getFullname());
+                ps.setString(5, barangayClearance.getGender());
+                ps.setString(6, String.valueOf(barangayClearance.getBirthDate()));
+                ps.setString(7, String.valueOf(barangayClearance.getAge()));
+                ps.setString(8, barangayClearance.getCitizenship());
+                ps.setString(9, barangayClearance.getAddress());
+                ps.setString(10, barangayClearance.getBarangay());
+                ps.setString(11, barangayClearance.getCity());
+                ps.setString(12, barangayClearance.getRemarks());
+                ps.setString(13,  String.valueOf(barangayClearance.getAmountPaid()));
+                ps.setString(14,  String.valueOf(barangayClearance.getAmountChange()));
+                ps.setString(15, String.valueOf(barangayClearance.getRegCost()));
+                ps.setString(16,  String.valueOf(barangayClearance.getRegVat())); 
+                ps.setString(17, String.valueOf(barangayClearance.getControl_no()));
+                ps.setString(18, barangayClearance.getCurrent_date());
+                ps.setBytes(19, barangayClearance.getProfileImage());
             }
             else
             {
@@ -97,7 +113,8 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
                         + "SET "
                         + "surname = ?, "
                         + "firstname = ?, "
-                        + "middlename = ?, "
+                        + "middlename = ?,"
+                         + "fullname = ?, "
                         + "gender = ?, "
                         + "birthdate = ?, "
                         + "age = ?, "
@@ -109,7 +126,10 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
                         + "paidamount = ?, "
                         + "changeamount = ?, "
                         + "regcost = ?, "
-                        + "regva = ? "
+                        + "regvat = ?,"
+                         + "control_no = ?,"
+                         + "current_date = ?,"
+                         + "profile_pic = ? "
                          + "WHERE "
                          + "id = ?";
  
@@ -118,18 +138,22 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
                 ps.setString(1, barangayClearance.getSurname());
                 ps.setString(2, barangayClearance.getFirstName());
                 ps.setString(3, barangayClearance.getMiddleName());
-                ps.setString(4, barangayClearance.getGender());
-                ps.setString(5, String.valueOf(barangayClearance.getBirthDate()));
-                ps.setString(6, String.valueOf(barangayClearance.getAge()));
-                ps.setString(7, barangayClearance.getCitizenship());
-                ps.setString(8, barangayClearance.getAddress());
-                ps.setString(9, barangayClearance.getBarangay());
-                ps.setString(10, barangayClearance.getCity());
-                ps.setString(11, barangayClearance.getRemarks());
-                ps.setString(12,  String.valueOf(barangayClearance.getAmountPaid()));
-                ps.setString(13,  String.valueOf(barangayClearance.getAmountChange()));
-                ps.setString(14, String.valueOf(barangayClearance.getRegCost()));
-                ps.setString(15,  String.valueOf(barangayClearance.getRegVat()));         
+                ps.setString(4, barangayClearance.getFullname());
+                ps.setString(5, barangayClearance.getGender());
+                ps.setString(6, String.valueOf(barangayClearance.getBirthDate()));
+                ps.setString(7, String.valueOf(barangayClearance.getAge()));
+                ps.setString(8, barangayClearance.getCitizenship());
+                ps.setString(9, barangayClearance.getAddress());
+                ps.setString(10, barangayClearance.getBarangay());
+                ps.setString(11, barangayClearance.getCity());
+                ps.setString(12, barangayClearance.getRemarks());
+                ps.setString(13,  String.valueOf(barangayClearance.getAmountPaid()));
+                ps.setString(14,  String.valueOf(barangayClearance.getAmountChange()));
+                ps.setString(15, String.valueOf(barangayClearance.getRegCost()));
+                ps.setString(16,  String.valueOf(barangayClearance.getRegVat())); 
+                ps.setString(17, String.valueOf(barangayClearance.getControl_no()));
+                ps.setString(18, barangayClearance.getCurrent_date());
+                ps.setBytes(19, barangayClearance.getProfileImage());
             }
             ps.execute();
             
@@ -158,5 +182,7 @@ public class BarangayClearanceImpl extends DatabaseSource implements BarangayCle
     public BarangayReport generateAndSaveBarangayClearanceReportReciept(BarangayClearance barangayClearance) throws ServiceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+ 
     
 }

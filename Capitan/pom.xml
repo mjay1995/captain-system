@@ -57,6 +57,7 @@
             <version>0.3.12-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
+     
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

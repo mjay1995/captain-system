@@ -1,0 +1,12 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#brgyDataTable#table-column{
+    -fx-alignment:CENTER;
+}
+
