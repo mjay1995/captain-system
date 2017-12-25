@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bgyclearance_report" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61158eff-898b-4b20-b0f9-9204f3ac54e4">
+	<property name="ireport.zoom" value="4.346449261414088"/>
+	<property name="ireport.x" value="834"/>
+	<property name="ireport.y" value="1135"/>
+	<parameter name="SURNAME" class="java.lang.String"/>
+	<parameter name="FIRSTNAME" class="java.lang.String"/>
+	<parameter name="MIDDLENAME" class="java.lang.String"/>
+	<parameter name="GENDER" class="java.lang.String"/>
+	<parameter name="BIRTHDATE" class="java.lang.String"/>
+	<parameter name="AGE" class="java.lang.String"/>
+	<parameter name="CITIZENSHIP" class="java.lang.String"/>
+	<parameter name="CIVIL STATUS" class="java.lang.String"/>
+	<parameter name="ADDRESS" class="java.lang.String"/>
+	<parameter name="BARANGAY" class="java.lang.String"/>
+	<parameter name="CITY" class="java.lang.String"/>
+	<parameter name="REMARKS" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="283" y="4" width="174" height="20" uuid="025a771b-457a-4d5e-8406-32f9722377f4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Gadugi" size="14"/>
+				</textElement>
+				<text><![CDATA[Republic of the Philippines]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="24" width="138" height="20" uuid="05ab641a-17a8-4c74-9c5a-deac4e2c2464"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Gadugi" size="14"/>
+				</textElement>
+				<text><![CDATA[CITY OF PARANAQUE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="44" width="258" height="33" uuid="48f21202-b143-4d9b-8960-e222279aecf4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Old English Text MT" size="32"/>
+				</textElement>
+				<text><![CDATA[Barangay Baclaran]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-19" y="90" width="617" height="3" backcolor="#000000" uuid="6280eed2-aaab-4a10-bf74-0f1560074f9b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-19" y="98" width="617" height="1" backcolor="#000000" uuid="2d840824-5936-4526-9b1b-95edc069c405"/>
+			</rectangle>
+			<image>
+				<reportElement x="154" y="4" width="75" height="73" uuid="34936f9a-d2cb-43f1-9741-b838c4cf706d"/>
+				<imageExpression><![CDATA["C:\\Users\\Marvin\\Desktop\\Baclaran-System\\img\\brgy_baclaran.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="417" y="17" width="100" height="14" uuid="b3690515-2cc4-42aa-ba0c-f16da5bc59a9"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Control No. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="31" width="100" height="14" uuid="ac275b25-5ba6-407b-8a48-cd0894ac9e84"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="159" y="35" width="1" height="15" uuid="44b227c6-06eb-4860-b601-e04c2573e3a4"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="221" y="0" width="258" height="41" uuid="9d37e488-2d61-457b-b28e-6c0a0578c80e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="STZhongsong" size="30"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CERTIFICATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="159" y="0" width="1" height="42" uuid="3a5a4f96-f25c-44a2-8096-6f69be63abd5"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="451" splitType="Stretch">
+			<staticText>
+				<reportElement x="164" y="0" width="388" height="41" uuid="971560d9-f8b1-4a09-b81b-dc6eba775ebf"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[This is to certify that the person whose name, signature and thumbmarks appear below has requested clearance from this Barangay and verification revealed the following personal circumstances:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="159" y="0" width="1" height="451" uuid="8c8114c5-1b1d-42b6-905e-66fdaf5260f4"/>
+			</line>
+			<staticText>
+				<reportElement x="166" y="54" width="73" height="11" uuid="62615824-2330-4317-9028-651667c7dc00"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Surname:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="73" width="73" height="11" uuid="992a8266-bee0-48ad-aa65-680145605989"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[First Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="92" width="73" height="11" uuid="4b02f89f-8d0c-4fcc-9166-d9a1abf6f4b1"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Middle Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="111" width="73" height="11" uuid="650b9ee2-8337-455a-bc1e-0ff6ae1b0201"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Gender:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="130" width="73" height="11" uuid="aa00fdb4-a723-4240-9858-f402276faeee"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Birthdate:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="150" width="73" height="11" uuid="23328202-5c25-4431-831e-89d60f2cb857"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Age:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="169" width="73" height="11" uuid="7b011264-d577-4b72-a548-088a65f9a212"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Citizenship:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="189" width="73" height="11" uuid="512fcc7a-acd8-4bcd-a627-3a8b22fcb969"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Civil Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="209" width="73" height="11" uuid="04951db8-9cf2-4177-b8ba-5411b498d99a"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="228" width="73" height="11" uuid="f3e7ca2d-b8e3-4118-9926-baa7560d6cfb"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Barangay:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="246" width="73" height="11" uuid="b7b441db-3033-4207-8efb-7c886eb74a06"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[City:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="265" width="73" height="14" uuid="93926721-0e5a-4ef9-98c7-5230480b71b5"/>
+				<textElement>
+					<font fontName="STZhongsong" size="8"/>
+				</textElement>
+				<text><![CDATA[Remarks:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="307" width="158" height="14" uuid="d8f58825-571f-40b6-a0c1-c417aaa02f75"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Applicants Name and Signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="259" y="306" width="193" height="1" uuid="d2ae02b2-7404-4941-bf0a-ba6a69212001"/>
+			</line>
+			<staticText>
+				<reportElement x="167" y="342" width="170" height="14" uuid="fa4c0d2e-7814-4aa8-97a8-8429a522b885"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[ISSUED FOR THE PURPOSE OF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="371" width="37" height="14" uuid="9fd28a84-9ee5-4a32-86c9-fbf1aa417e93"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Specify]]></text>
+			</staticText>
+			<line>
+				<reportElement x="259" y="371" width="193" height="1" uuid="554b88eb-95e4-4a9d-b60d-a5f01ff54339"/>
+			</line>
+			<staticText>
+				<reportElement x="355" y="397" width="171" height="14" uuid="93b2e3bf-ff15-446e-8b7f-600a86fe6214"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[CERTIFIED TRUE AND CORRECT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="402" width="73" height="14" uuid="b5deccaf-9ed0-4497-a853-31727025c1e1"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Processed by:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="22" y="0" width="103" height="97" uuid="303cab33-95fd-4ecd-8e5c-0420aea82389"/>
+				<imageExpression><![CDATA["F:\\CAPITAN FILES\\Baclaran\\kap dondon.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="255" y="54" width="100" height="12" uuid="3963055a-3f09-48cf-a4d0-edde3f542b20"/>
+				<textElement markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SURNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="73" width="100" height="12" uuid="e2cfd1a7-236a-4c8c-882d-8777300b395d"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FIRSTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="92" width="100" height="12" uuid="8372d635-12f0-4438-b8a4-f64d13d45060"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MIDDLENAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="110" width="100" height="12" uuid="2a84856d-c4d5-4035-8108-82be3b5a81f8"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{GENDER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="130" width="100" height="12" uuid="7b6d9eb4-ee67-412f-8c1c-bed31890a034"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BIRTHDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="150" width="100" height="12" uuid="d3bcbc8f-b0d3-4de5-af71-5c5b840aed2c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="169" width="100" height="12" uuid="a3db0b4b-e8dd-45ee-9a3f-c58026d0eee9"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CITIZENSHIP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="189" width="100" height="12" uuid="b44923c5-f7b2-48e0-9683-c1be8e2dc7d7"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CIVIL STATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="209" width="100" height="12" uuid="577e9720-ccdd-42cb-9b6c-4d7fc0abea1b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="228" width="100" height="12" uuid="5f754024-843d-4411-85d5-8e4b875df81c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{BARANGAY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="246" width="100" height="12" uuid="2dc3290e-6720-48bb-ae88-d2374e764fe7"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="265" width="100" height="14" uuid="c8b7dfdb-45f1-400b-bf8f-2b95bd174ba0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REMARKS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="82" splitType="Stretch">
+			<line>
+				<reportElement x="159" y="0" width="1" height="70" uuid="3354209c-f5f4-40c0-935d-945bfc8ef6e6"/>
+			</line>
+			<line>
+				<reportElement x="187" y="-18" width="168" height="1" uuid="31122d4b-f3d1-4295-990d-7934e2d4d74d"/>
+			</line>
+			<staticText>
+				<reportElement x="197" y="-17" width="95" height="14" uuid="623048f3-bb22-4d6a-a3b4-764c2822904e"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Front Desk Clerk]]></text>
+			</staticText>
+			<line>
+				<reportElement x="400" y="-19" width="168" height="1" uuid="b7d954a5-6f14-47c7-ac19-68d21d363585"/>
+			</line>
+			<staticText>
+				<reportElement x="435" y="-19" width="106" height="14" uuid="1c14619e-1e6f-45f3-bdff-cf62c998e1ce"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Barangay Secretary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="6" width="95" height="14" uuid="ed9f64c9-1bd6-4afc-ada3-cb313613f6c6"/>
+				<textElement>
+					<font fontName="STZhongsong" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APPROVED BY:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="41" width="95" height="14" uuid="fd8bbfa9-5454-41e7-b400-f023e9eee0d0"/>
+				<textElement>
+					<font fontName="STZhongsong"/>
+				</textElement>
+				<text><![CDATA[Punong Barangay]]></text>
+			</staticText>
+			<line>
+				<reportElement x="266" y="31" width="168" height="1" uuid="d053ed83-2e4f-4da5-848c-57418015c5f2"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="-19" y="-12" width="617" height="1" uuid="ee0d25c0-25ca-48fa-a0ca-dea2bb23c14e"/>
+			</line>
+			<staticText>
+				<reportElement x="173" y="-5" width="199" height="15" uuid="7238acbb-a3b0-45ea-b2e3-7029d4535306"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[NOT VALID WITHOUT BARANGAY SEAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="10" width="251" height="15" uuid="468adae6-e4c2-4f12-8b5b-f7c4ad9f89f9"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[This CLEARANCE is valid for 90 days from date of issue]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

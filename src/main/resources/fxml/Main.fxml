@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1165.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.circuit.main.MainController">
+   <children>
+      <AnchorPane prefHeight="776.0" prefWidth="221.0" style="-fx-background-color: #20293c;">
+         <children>
+            <Pane prefHeight="57.0" prefWidth="221.0">
+               <children>
+                  <Label layoutX="59.0" layoutY="11.0" prefHeight="37.0" prefWidth="134.0" text="Capitan" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu" size="26.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/city-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="11.0" layoutY="57.0" prefHeight="289.0" prefWidth="200.0">
+               <children>
+                  <JFXButton fx:id="dashboardButton" alignment="TOP_LEFT" graphicTextGap="10.0" layoutY="22.0" lineSpacing="10.0" onAction="#openHome" prefHeight="37.0" prefWidth="200.0" text="Dashboard" textFill="#656565">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="createNewButton" alignment="TOP_LEFT" graphicTextGap="10.0" layoutY="59.0" lineSpacing="10.0" onAction="#createNewApp" prefHeight="37.0" prefWidth="200.0" text="Create New" textFill="#656565">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="managementButton" alignment="TOP_LEFT" graphicTextGap="10.0" layoutY="133.0" lineSpacing="10.0" onAction="#manageDataButton" prefHeight="37.0" prefWidth="200.0" text="Management" textFill="#656565">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="recordsButton" alignment="TOP_LEFT" graphicTextGap="10.0" layoutY="96.0" lineSpacing="10.0" onAction="#viewRecords" prefHeight="37.0" prefWidth="200.0" text="Records" textFill="#656565">
+                     <font>
+                        <Font name="Ubuntu" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+           
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="235.0" layoutY="68.0" prefHeight="694.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20px 20px 0px 0px;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Barangay Clearance">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="903.0">
+                     <children>
+                        <TableView fx:id="brgyDataTable" layoutX="12.0" layoutY="77.0" prefHeight="574.0" prefWidth="892.0">
+                           <columns>
+                              <TableColumn id="table-column" fx:id="idCol" editable="false" prefWidth="236.0" resizable="false" text="ID" />
+                              <TableColumn id="table-column" fx:id="fullNameCol" editable="false" prefWidth="273.0" resizable="false" text="Full Name" />
+                              <TableColumn id="table-column" fx:id="dateRegCol" editable="false" prefWidth="382.0" resizable="false" text="Date Registered" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="57.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20pz 20px 0px 0px;">
+                           <children>
+                              <Label layoutX="641.0" layoutY="21.0" prefHeight="22.0" prefWidth="72.0" text="Search : ">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchBrgy" layoutX="713.0" layoutY="20.0" />
+                              <Label layoutX="45.0" layoutY="21.0" prefHeight="22.0" prefWidth="51.0" text="Show">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="dropBrgy" layoutX="96.0" layoutY="20.0" prefHeight="27.0" prefWidth="49.0" />
+                              <Label layoutX="154.0" layoutY="21.0" prefHeight="22.0" prefWidth="67.0" text="entries">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Business Clearance">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="903.0">
+                     <children>
+                        <TableView fx:id="busDataTableView" layoutX="12.0" layoutY="77.0" prefHeight="574.0" prefWidth="892.0">
+                          <columns>
+                              <TableColumn prefWidth="75.0" text="ID" />
+                            <TableColumn prefWidth="258.0" text="Full Name" />
+                              <TableColumn prefWidth="192.0" text="Date Registered" />
+                            <TableColumn prefWidth="366.0" text="Business Name" />
+                          </columns>
+                        </TableView>
+                        <Pane layoutY="-4.0" prefHeight="57.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20pz 20px 0px 0px;">
+                           <children>
+                              <Label layoutX="641.0" layoutY="21.0" prefHeight="22.0" prefWidth="72.0" text="Search : ">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchBus" layoutX="713.0" layoutY="20.0" />
+                              <Label layoutX="45.0" layoutY="21.0" prefHeight="22.0" prefWidth="51.0" text="Show">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="dropBus" layoutX="96.0" layoutY="20.0" prefHeight="27.0" prefWidth="49.0" />
+                              <Label layoutX="154.0" layoutY="21.0" prefHeight="22.0" prefWidth="67.0" text="entries">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Bail Clearance">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="903.0">
+                     <children>
+                        <TableView fx:id="bailDataTableView" layoutX="12.0" layoutY="77.0" prefHeight="574.0" prefWidth="892.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="ID" />
+                              <TableColumn prefWidth="258.0" text="Full Name" />
+                              <TableColumn prefWidth="192.0" text="Date Registered" />
+                              <TableColumn prefWidth="366.0" text="Violation" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutY="-4.0" prefHeight="57.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20pz 20px 0px 0px;">
+                           <children>
+                              <Label layoutX="641.0" layoutY="21.0" prefHeight="22.0" prefWidth="72.0" text="Search : ">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchBail" layoutX="713.0" layoutY="20.0" />
+                              <Label layoutX="45.0" layoutY="21.0" prefHeight="22.0" prefWidth="51.0" text="Show">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="dropBail" layoutX="96.0" layoutY="20.0" prefHeight="27.0" prefWidth="49.0" />
+                              <Label layoutX="154.0" layoutY="21.0" prefHeight="22.0" prefWidth="67.0" text="entries">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Pedicab Clearance">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="516.0" prefWidth="858.0">
+                     <children>
+                        <TableView fx:id="pedDataTableView" layoutX="12.0" layoutY="77.0" prefHeight="574.0" prefWidth="892.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="ID" />
+                              <TableColumn prefWidth="258.0" text="Full Name" />
+                              <TableColumn prefWidth="192.0" text="Date Registered" />
+                              <TableColumn prefWidth="366.0" text="Expiration" />
+                           </columns>
+                        </TableView>
+                        <Pane layoutY="-4.0" prefHeight="57.0" prefWidth="916.0" style="-fx-border-color: #DFDFDF#DFDFDF; -fx-border-radius: 20pz 20px 0px 0px;">
+                           <children>
+                              <Label layoutX="641.0" layoutY="21.0" prefHeight="22.0" prefWidth="72.0" text="Search : ">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchPed" layoutX="713.0" layoutY="20.0" />
+                              <Label layoutX="45.0" layoutY="21.0" prefHeight="22.0" prefWidth="51.0" text="Show">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="dropPed" layoutX="96.0" layoutY="20.0" prefHeight="27.0" prefWidth="49.0" />
+                              <Label layoutX="154.0" layoutY="21.0" prefHeight="22.0" prefWidth="67.0" text="entries">
+                                 <font>
+                                    <Font name="Ubuntu Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutX="235.0" layoutY="14.0" prefHeight="45.0" prefWidth="916.0">
+         <children>
+            <Pane layoutY="4.0" prefHeight="37.0" prefWidth="916.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="4.0" prefHeight="30.0" prefWidth="88.0" text="Welcome, ">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentAdmin" layoutX="109.0" layoutY="5.0" prefHeight="30.0" prefWidth="88.0">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="692.0" layoutY="8.0" text="Date:">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="742.0" layoutY="8.0" prefHeight="21.0" prefWidth="168.0">
+                     <font>
+                        <Font name="Ubuntu Light" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

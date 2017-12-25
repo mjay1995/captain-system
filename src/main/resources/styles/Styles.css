@@ -1,0 +1,18 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#brgyDataTable#table-column{
+    -fx-alignment:CENTER;
+}
+
+
+#credPane
+{
+    -webkit-border-radius: 10px 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
